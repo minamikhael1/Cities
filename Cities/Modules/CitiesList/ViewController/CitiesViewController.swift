@@ -32,23 +32,13 @@ class CitiesViewController: UIViewController {
     //MARK:- View Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
+        self.title = "Cities"
+        setUpTableView()
         bindViewModel()
         viewModel?.fetchCities()
     }
 
     //MARK:- Helpers
-    private func setupView() {
-        setupNavigation()
-        setUpTableView()
-    }
-
-    private func setupNavigation() {
-        self.title = "Cities"
-        navigationItem.largeTitleDisplayMode = .never
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-
     private func setUpTableView() {
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.tableFooterView = UIView()
@@ -101,10 +91,6 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
         cell?.detailTextLabel?.text = viewModel?.cityCellSubtitle(for: indexPath.row)
         cell?.accessoryType = viewModel?.cityCellAccessory(for: indexPath.row) ?? .none
         return cell ?? UITableViewCell()
-    }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
