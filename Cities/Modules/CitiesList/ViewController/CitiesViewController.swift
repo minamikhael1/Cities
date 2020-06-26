@@ -44,7 +44,7 @@ class CitiesViewController: UIViewController {
     }
 
     private func setupNavigation() {
-        navigationItem.titleView = UIImageView(image: UIImage(named: "tmdb"))
+        self.title = "Cities"
         navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
     }
@@ -55,12 +55,13 @@ class CitiesViewController: UIViewController {
     }
 
     private func show(loading: Bool) {
-         DispatchQueue.main.async {
-             self.tableView.isHidden = loading
-             self.activityIndicator.isHidden = !loading
-             loading == true ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
-         }
-     }
+        DispatchQueue.main.async {
+            self.tableView.isHidden = loading
+            self.activityIndicator.isHidden = !loading
+            self.searchBar.isHidden = loading
+            loading == true ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+        }
+    }
 
     //MARK:- Data binding
     private func bindViewModel() {
@@ -93,14 +94,14 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: CityCellID)
-         if cell == nil {
-             cell = UITableViewCell(style: .subtitle, reuseIdentifier: CityCellID)
-             cell?.accessoryType = .disclosureIndicator
-         }
-         let cityVM = viewModel?.cities.value[indexPath.row]
-         cell?.textLabel?.text = cityVM?.cityName()
-         cell?.detailTextLabel?.text = cityVM?.cityCoordsDescription()
-         return cell ?? UITableViewCell()
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: CityCellID)
+            cell?.accessoryType = .disclosureIndicator
+        }
+        let cityVM = viewModel?.cities.value[indexPath.row]
+        cell?.textLabel?.text = cityVM?.cityName()
+        cell?.detailTextLabel?.text = cityVM?.cityCoordsDescription()
+        return cell ?? UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

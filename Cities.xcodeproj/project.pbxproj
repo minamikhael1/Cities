@@ -30,6 +30,7 @@
 		FF8E976924A4D42F003E7331 /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976824A4D42F003E7331 /* URLExtensions.swift */; };
 		FF8E976B24A4D635003E7331 /* CitiesFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976A24A4D635003E7331 /* CitiesFileService.swift */; };
 		FF8E976D24A4DC91003E7331 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976C24A4DC91003E7331 /* CityViewModel.swift */; };
+		FF8E976F24A53E62003E7331 /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976E24A53E62003E7331 /* MKMapViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		FF8E976824A4D42F003E7331 /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		FF8E976A24A4D635003E7331 /* CitiesFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFileService.swift; sourceTree = "<group>"; };
 		FF8E976C24A4DC91003E7331 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		FF8E976E24A53E62003E7331 /* MKMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				FF8E975724A4C0B0003E7331 /* UIViewControllerExtensions.swift */,
+				FF8E976E24A53E62003E7331 /* MKMapViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				FF8E975824A4C0B0003E7331 /* UIViewControllerExtensions.swift in Sources */,
 				FF8E976D24A4DC91003E7331 /* CityViewModel.swift in Sources */,
 				FF8E973B24A4BD81003E7331 /* CitiesViewModel.swift in Sources */,
+				FF8E976F24A53E62003E7331 /* MKMapViewExtension.swift in Sources */,
 				FF8E975424A4C07C003E7331 /* Bindable.swift in Sources */,
 				FF8E975E24A4C167003E7331 /* DataClient.swift in Sources */,
 				FF8E975624A4C091003E7331 /* Alert.swift in Sources */,

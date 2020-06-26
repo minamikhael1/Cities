@@ -28,7 +28,8 @@ class CitiesViewModel {
         dataClient.getCities(service: CitiesFileService()) { [weak self] response in
             switch response {
             case .success(let result):
-                self?.cities.value = result.map({ CityViewModel(city: $0) })
+                let citiesSorted = result.sorted {$0.name < $1.name}
+                self?.cities.value = citiesSorted.map({ CityViewModel(city: $0) })
             case .failure(let error):
                 self?.state.value = .error(error)
             }

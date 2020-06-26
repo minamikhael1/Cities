@@ -28,4 +28,8 @@ class CityViewModel {
     func cityCoords() -> CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: city.coordinates.latitude, longitude: city.coordinates.longitude)
     }
+
+    func location() -> CLLocation {
+        return CLLocation(latitude: city.coordinates.latitude, longitude: city.coordinates.longitude)
+    }
 }

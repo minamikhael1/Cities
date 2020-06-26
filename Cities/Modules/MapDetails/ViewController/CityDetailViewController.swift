@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MapKit
 
 class CityDetailViewController: UIViewController {
 
     //MARK:- IBOutlet
+    @IBOutlet weak var mapView: MKMapView!
 
     //MARK:- Variables
     private var viewModel: CityViewModel?
@@ -28,5 +30,7 @@ class CityDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = viewModel?.cityName()
+        guard let location = viewModel?.location() else { return }
+        mapView.centerToLocation(location)
     }
 }
