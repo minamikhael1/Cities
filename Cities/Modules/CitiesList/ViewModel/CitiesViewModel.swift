@@ -7,13 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 class CitiesViewModel {
 
     //MARK:- Properties
-    private (set) var state: Bindable<FetchingDataState> = Bindable(.loading)
     private let dataClient: DataClient
+    private (set) var state: Bindable<FetchingDataState> = Bindable(.loading)
     private (set) var cities: Bindable<[CityViewModel]> = Bindable([])
+    private var allCities = [City]()
+    var searchQuery: String?
 
     //MARK:- init
     //init CitiesViewModel with dependency injection of data client object
@@ -22,18 +25,64 @@ class CitiesViewModel {
         self.dataClient = dataClient
     }
 
-    //MARK:- Helpers
     func fetchCities() {
         state.value = .loading
         dataClient.getCities(service: CitiesFileService()) { [weak self] response in
             switch response {
             case .success(let result):
-                let citiesSorted = result.sorted {$0.name < $1.name}
-                self?.cities.value = citiesSorted.map({ CityViewModel(city: $0) })
+                self?.allCities = result.sorted {$0.name < $1.name}
+                self?.cities.value = self?.allCities.map({ CityViewModel(city: $0) }) ?? [CityViewModel]()
             case .failure(let error):
                 self?.state.value = .error(error)
             }
             self?.state.value = .finishedLoading
         }
+    }
+
+    func searchTextChanged(query: String?) {
+        searchQuery = query
+        if query == nil || query?.isEmpty == true {
+            resetSearch()
+        } else {
+            performSearch()
+        }
+    }
+
+    func searchDidBeginEditing(query: String?) {
+        searchQuery = query
+        if query == nil || query?.isEmpty == true {
+            resetSearch()
+        }
+    }
+
+    func resetSearch() {
+        searchQuery = nil
+        cities.value = allCities.map({ CityViewModel(city: $0) })
+    }
+
+    func emptySearch() -> Bool {
+        if let searchQuery = searchQuery {
+            return !searchQuery.isEmpty && cities.value.count == 0
+        }
+        return false
+    }
+
+    // TableView related
+    func cityCellTitle(for index: Int) -> String {
+        return emptySearch() ? "No city found!" : cities.value[index].cityName()
+    }
+
+    func cityCellSubtitle(for index: Int) -> String? {
+        return emptySearch() ? nil : cities.value[index].cityCoordsDescription()
+    }
+
+    func cityCellAccessory(for index: Int) -> UITableViewCell.AccessoryType {
+        return emptySearch() ? .none : .disclosureIndicator
+    }
+
+    //MARK:- Helpers
+    private func performSearch() {
+        guard let query = searchQuery else { return }
+        cities.value = allCities.filter({ $0.name.lowercased().hasPrefix(query.lowercased()) }).map({ CityViewModel(city: $0) })
     }
 }

@@ -89,18 +89,17 @@ class CitiesViewController: UIViewController {
 extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel?.cities.value.count ?? 0
+        return viewModel?.emptySearch() == true ? 1 : viewModel?.cities.value.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCell(withIdentifier: CityCellID)
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: CityCellID)
-            cell?.accessoryType = .disclosureIndicator
         }
-        let cityVM = viewModel?.cities.value[indexPath.row]
-        cell?.textLabel?.text = cityVM?.cityName()
-        cell?.detailTextLabel?.text = cityVM?.cityCoordsDescription()
+        cell?.textLabel?.text = viewModel?.cityCellTitle(for: indexPath.row)
+        cell?.detailTextLabel?.text = viewModel?.cityCellSubtitle(for: indexPath.row)
+        cell?.accessoryType = viewModel?.cityCellAccessory(for: indexPath.row) ?? .none
         return cell ?? UITableViewCell()
     }
 
@@ -115,6 +114,29 @@ extension CitiesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+}
+
+//MARK:- UISearchBarDelegate
+extension CitiesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.searchTextChanged(query: searchBar.text)
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel?.searchDidBeginEditing(query: searchBar.text)
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = nil
+        viewModel?.resetSearch()
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.resignFirstResponder()
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
     }
 }
