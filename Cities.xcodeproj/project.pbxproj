@@ -34,6 +34,7 @@
 		FF8E977624A60DFC003E7331 /* CitiesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977524A60DFC003E7331 /* CitiesViewModelTests.swift */; };
 		FF8E977924A60E1E003E7331 /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977824A60E1E003E7331 /* URLExtensionTests.swift */; };
 		FF8E977C24A610CC003E7331 /* BindableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977B24A610CC003E7331 /* BindableTests.swift */; };
+		FF8E977E24A61BAC003E7331 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FF8E977D24A61BAC003E7331 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		FF8E977524A60DFC003E7331 /* CitiesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModelTests.swift; sourceTree = "<group>"; };
 		FF8E977824A60E1E003E7331 /* URLExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionTests.swift; sourceTree = "<group>"; };
 		FF8E977B24A610CC003E7331 /* BindableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableTests.swift; sourceTree = "<group>"; };
+		FF8E977D24A61BAC003E7331 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		FF8E96F624A4AF5C003E7331 = {
 			isa = PBXGroup;
 			children = (
+				FF8E977D24A61BAC003E7331 /* README.md */,
 				FF8E970124A4AF5C003E7331 /* Cities */,
 				FF8E971824A4AF5E003E7331 /* CitiesTests */,
 				FF8E970024A4AF5C003E7331 /* Products */,
@@ -400,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8E977E24A61BAC003E7331 /* README.md in Resources */,
 				FF8E975C24A4C134003E7331 /* cities.json in Resources */,
 				FF8E974B24A4BE9E003E7331 /* CityDetailViewController.xib in Resources */,
 				FF8E970F24A4AF5D003E7331 /* LaunchScreen.storyboard in Resources */,
