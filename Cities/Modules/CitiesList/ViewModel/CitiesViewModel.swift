@@ -32,10 +32,10 @@ class CitiesViewModel {
             case .success(let result):
                 self?.allCities = result.sorted {$0.name < $1.name}
                 self?.cities.value = self?.allCities.map({ CityViewModel(city: $0) }) ?? [CityViewModel]()
+                self?.state.value = .finishedLoading
             case .failure(let error):
                 self?.state.value = .error(error)
             }
-            self?.state.value = .finishedLoading
         }
     }
 

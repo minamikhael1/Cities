@@ -10,7 +10,6 @@
 		FF8E970324A4AF5C003E7331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E970224A4AF5C003E7331 /* AppDelegate.swift */; };
 		FF8E970C24A4AF5D003E7331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF8E970B24A4AF5D003E7331 /* Assets.xcassets */; };
 		FF8E970F24A4AF5D003E7331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF8E970D24A4AF5D003E7331 /* LaunchScreen.storyboard */; };
-		FF8E971A24A4AF5E003E7331 /* CitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E971924A4AF5E003E7331 /* CitiesTests.swift */; };
 		FF8E973224A4B092003E7331 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E973124A4B092003E7331 /* Coordinator.swift */; };
 		FF8E973524A4BD3D003E7331 /* CitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E973424A4BD3D003E7331 /* CitiesCoordinator.swift */; };
 		FF8E973724A4BD5C003E7331 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E973624A4BD5C003E7331 /* City.swift */; };
@@ -31,6 +30,10 @@
 		FF8E976B24A4D635003E7331 /* CitiesFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976A24A4D635003E7331 /* CitiesFileService.swift */; };
 		FF8E976D24A4DC91003E7331 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976C24A4DC91003E7331 /* CityViewModel.swift */; };
 		FF8E976F24A53E62003E7331 /* MKMapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E976E24A53E62003E7331 /* MKMapViewExtension.swift */; };
+		FF8E977124A60C6C003E7331 /* Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977024A60C6C003E7331 /* Mock.swift */; };
+		FF8E977624A60DFC003E7331 /* CitiesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977524A60DFC003E7331 /* CitiesViewModelTests.swift */; };
+		FF8E977924A60E1E003E7331 /* URLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977824A60E1E003E7331 /* URLExtensionTests.swift */; };
+		FF8E977C24A610CC003E7331 /* BindableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8E977B24A610CC003E7331 /* BindableTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,6 @@
 		FF8E970E24A4AF5D003E7331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF8E971024A4AF5D003E7331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8E971524A4AF5E003E7331 /* CitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF8E971924A4AF5E003E7331 /* CitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTests.swift; sourceTree = "<group>"; };
 		FF8E971B24A4AF5E003E7331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF8E973124A4B092003E7331 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		FF8E973424A4BD3D003E7331 /* CitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesCoordinator.swift; sourceTree = "<group>"; };
@@ -72,6 +74,10 @@
 		FF8E976A24A4D635003E7331 /* CitiesFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesFileService.swift; sourceTree = "<group>"; };
 		FF8E976C24A4DC91003E7331 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		FF8E976E24A53E62003E7331 /* MKMapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewExtension.swift; sourceTree = "<group>"; };
+		FF8E977024A60C6C003E7331 /* Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mock.swift; sourceTree = "<group>"; };
+		FF8E977524A60DFC003E7331 /* CitiesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModelTests.swift; sourceTree = "<group>"; };
+		FF8E977824A60E1E003E7331 /* URLExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensionTests.swift; sourceTree = "<group>"; };
+		FF8E977B24A610CC003E7331 /* BindableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +134,10 @@
 		FF8E971824A4AF5E003E7331 /* CitiesTests */ = {
 			isa = PBXGroup;
 			children = (
-				FF8E971924A4AF5E003E7331 /* CitiesTests.swift */,
+				FF8E977024A60C6C003E7331 /* Mock.swift */,
+				FF8E977A24A610B2003E7331 /* Application */,
+				FF8E977724A60E08003E7331 /* DataLayerTests */,
+				FF8E977224A60DCC003E7331 /* CitiesListTests */,
 				FF8E971B24A4AF5E003E7331 /* Info.plist */,
 			);
 			path = CitiesTests;
@@ -286,6 +295,30 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		FF8E977224A60DCC003E7331 /* CitiesListTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF8E977524A60DFC003E7331 /* CitiesViewModelTests.swift */,
+			);
+			path = CitiesListTests;
+			sourceTree = "<group>";
+		};
+		FF8E977724A60E08003E7331 /* DataLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF8E977824A60E1E003E7331 /* URLExtensionTests.swift */,
+			);
+			path = DataLayerTests;
+			sourceTree = "<group>";
+		};
+		FF8E977A24A610B2003E7331 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FF8E977B24A610CC003E7331 /* BindableTests.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -414,7 +447,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF8E971A24A4AF5E003E7331 /* CitiesTests.swift in Sources */,
+				FF8E977124A60C6C003E7331 /* Mock.swift in Sources */,
+				FF8E977624A60DFC003E7331 /* CitiesViewModelTests.swift in Sources */,
+				FF8E977C24A610CC003E7331 /* BindableTests.swift in Sources */,
+				FF8E977924A60E1E003E7331 /* URLExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +597,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2Y84SE7U4;
 				INFOPLIST_FILE = Cities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -579,6 +616,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P2Y84SE7U4;
 				INFOPLIST_FILE = Cities/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
