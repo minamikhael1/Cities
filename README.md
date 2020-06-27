@@ -3,7 +3,7 @@ iOS app in swift using local json to display and search cities
 
 ## Features
 - Listing all cities
-- Live search (filter) using
+- Live search (filter)
 - Map details screen for the selected city
 - Unit tests covering view model and binding
 
