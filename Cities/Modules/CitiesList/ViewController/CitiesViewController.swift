@@ -33,6 +33,11 @@ class CitiesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cities"
+        if #available(iOS 13.0, *) {
+            activityIndicator.style = .medium
+         } else {
+            activityIndicator.style = .gray
+        }
         setUpTableView()
         bindViewModel()
         viewModel?.fetchCities()

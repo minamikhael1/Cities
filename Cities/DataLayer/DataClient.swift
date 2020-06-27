@@ -16,7 +16,7 @@ class DataClient: CitiesFileServiceAPI {
     //     - Parameter completion: result of type `DataResponse`.
     // */
     private func load<T>(type: T.Type, service: FileLoadService, completion: @escaping (DataResponse<T>) -> ()) where T: Decodable {
-        DispatchQueue.global(qos: .background).async {
+        DispatchQueue.global(qos: .userInitiated).async {
             let fileUrl = URL(service: service)
             do {
                 let data = try Data(contentsOf: fileUrl, options: .mappedIfSafe)
