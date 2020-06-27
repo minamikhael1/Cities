@@ -57,7 +57,7 @@ class CitiesViewModel {
 
     func resetSearch() {
         searchQuery = nil
-        DispatchQueue.global(qos: .default).async {[weak self] in
+        DispatchQueue.global(qos: .userInitiated).async {[weak self] in
             self?.cities.value = self?.allCities.map({ CityViewModel(city: $0) }) ?? [CityViewModel]()
         }
     }
@@ -85,7 +85,7 @@ class CitiesViewModel {
     //MARK:- Helpers
     private func performSearch() {
         guard let query = searchQuery else { return }
-        DispatchQueue.global(qos: .default).async {[weak self] in
+        DispatchQueue.global(qos: .userInitiated).async {[weak self] in
             self?.cities.value = self?.allCities.filter({ $0.name.lowercased().hasPrefix(query.lowercased()) }).map({ CityViewModel(city: $0) }) ?? [CityViewModel]()
         }
     }
